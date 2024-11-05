@@ -1,0 +1,386 @@
+@import url('../../static/main.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+body {
+  font-family: var(--fonte-logo);
+  background-color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.registro-logo {
+  position: absolute;
+  width: 35%;
+  top: -50px;
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%);
+  background-color: transparent;
+  z-index: 2;
+}
+
+.titulo-logo {
+  font-size: 35px;
+  color: #000000;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.subtitulo__texto {
+  font-size: 35px;
+  color: var(--color1);
+}
+
+
+.center_box {
+  background-color: #fff;
+  padding: 20px;
+  padding-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+#dcadastrais{
+  text-align: center;
+  font-size: 15x;
+  margin-bottom: 25px;
+  display: block;
+}
+
+#dpessoais{
+  text-align: center;
+  font-size: 15x;
+  margin-bottom: 25px;
+  display: none;
+}
+
+#objetivos{
+  text-align: center;
+  font-size: 15x;
+  margin-bottom: 25px;
+  display: none;
+}
+
+#confirmacao{
+  text-align: center;
+  font-size: 15x;
+  margin-bottom: 25px;
+  display: none;
+}
+
+#termos{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 15x;
+  margin-bottom: 5px;
+  display: none;
+}
+
+
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.senha-container {
+  position: relative; /* Necessário para o posicionamento absoluto do botão */
+  display: flex;
+  align-items: center;
+}
+
+.entrada input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #acacac;
+  border-radius: 4px;
+}
+.senha-container button img {
+  width: 15px; /* Ajuste o tamanho da imagem conforme necessário */
+  height: 15px;
+}
+
+.senha-container button {
+  position: absolute; /* Posiciona o botão de forma absoluta dentro do contêiner */
+  right: 5px; /* Ajusta a posição do botão em relação à borda direita do contêiner */
+  top: 55%; /* Centraliza verticalmente o botão em relação ao campo de entrada */
+  transform: translateY(-50%); /* Corrige a centralização vertical */
+  border: none;
+  background: none;
+  font-size: 20px; /* Ajusta o tamanho da fonte do botão */
+  cursor: pointer;
+  z-index: 1; /* Garante que o botão fique acima do campo de entrada */
+}
+
+.entrada {
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex; 
+  flex-direction: column;
+  position: relative; /* Necessário para posicionar a mensagem de erro corretamente */
+}
+
+.mensagem-erro {
+  color: red;
+  font-size: 12px;
+  display: none; /* Oculta a mensagem de erro por padrão */
+  position: absolute; /* Remove a mensagem de erro do fluxo do documento */
+  bottom: -15px; /* Posiciona a mensagem logo abaixo do campo de entrada */
+  left: 0;
+  width: 100%; /* Garante que a mensagem de erro tenha a largura do campo de entrada */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+input.erro {
+  background-color: rgba(255, 0, 0, 0.055);
+  border-color: #ff0000;
+}
+
+.btns {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: nowrap;
+}
+
+.btn1 {
+  font-size: 40px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: none;
+  border: none;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn1:hover {
+  color: aqua;
+}
+
+.btn2 {
+  font-size: 40px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background: none;
+  border: none;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.btn2:hover {
+  color: aqua;
+}
+
+.progress-dots {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pag2 {
+  display: none;
+}
+
+.dot1, .dot2, .dot3, .dot4 {
+  width: 10px;
+  height: 10px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+}
+
+.dot1.active, .dot2.active, .dot3.active, .dot4.active {
+  background-color: #444444;
+}
+
+.texto_cadastro {
+  font-size: 13px;
+}
+
+input[type="range"] {
+  appearance: none; /* Fallback geral */
+  -webkit-appearance: none; /* Para WebKit (Chrome, Safari) */
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none; /* Fallback */
+  -webkit-appearance: none; /* Para WebKit */
+  width: 20px;
+  height: 20px;
+  background: var(--color4);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#data {
+  margin-bottom:14px; /* Afasta o campo Data de nascimento do campo Peso */
+}
+
+.entrada input[type="range"] {
+  margin-top: 10px; /* Adiciona espaçamento entre o texto e o slider */
+}
+
+#peso{
+ margin-bottom: 5px;
+}
+
+#altura{
+  margin-bottom: 5px;
+}
+
+.sexo-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os botões */
+}
+
+.sexo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre a imagem e o texto */
+}
+
+.sexo-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #000; /* Cor padrão do SVG */
+}
+
+.sexo-btn svg.selected {
+  fill: var(--color6); /* Cor do SVG quando está selecionado */
+}
+
+.pag3{
+  display:none;
+}
+
+
+.metas {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px; 
+}
+
+#metaicon{
+  width: 50px;
+  height: 50px;
+}
+
+.meta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#meta,#meta2,#meta3{
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+#meta:hover,#meta2:hover,#meta3:hover{
+  color: var(--color6);
+}
+
+#subtexto {
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 5px;
+  text-align: justify; 
+  text-align-last: left; 
+}
+
+.pag4{
+  display:none;
+  text-align: left;
+ 
+}
+
+.form4{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#termos2 {
+  display:none;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ccc; 
+  padding: 10px;
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  background-color: #f9f9f9; 
+  font-size: 14px;
+  line-height: 1.8;
+  word-wrap: break-word;
+}
+
+#termos2 p {
+  margin-bottom: 15px; /* Adicionei espaço entre os parágrafos */
+}
+
+#aceito {
+  display: none;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+.check input[type="checkbox"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 12px; /* Largura da checkbox */
+  height: 12px; /* Altura da checkbox */
+  border: 1px solid #776d6d; /* Cor da borda */
+  border-radius: 3px; /* Bordas arredondadas */
+  background-color: rgb(255, 255, 255); /* Cor de fundo padrão */
+  cursor: pointer;
+  margin-right: 5px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check input[type="checkbox"]:checked {
+  background-color:var(--color6); /* Cor de fundo quando marcada */
+  border-color: #000000; /* Cor da borda quando marcada */
+}
+
+.check input[type="checkbox"]:checked::after {
+  content: "X";
+  color: #000000;
+}

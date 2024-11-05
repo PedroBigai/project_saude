@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde +</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+
+<body>
+
+    <div class="caixa-centro" id="fundo">
+        <img src="/static/images/logo.svg" alt="Saúde mais" class="registro-logo">
+        <h1 class="titulo-logo">SAÚDE <strong class="subtitulo__texto">+</strong></h1>
+
+        <form id="login">
+            <div class="entrada">
+                <input type="text" id="usuario" name="usuario" placeholder="Usuário">
+                <span class="mensagem-erro" id="usuario-erro">Por favor, insira o usuário.</span>
+            </div>
+
+            <div class="entrada">
+                <div class="senha-container">
+                    <input type="password" id="senha" name="senha" placeholder="Senha" maxlength="18">
+                    <button type="button" class="mostrarsenha" id="mostrarsenha">
+                        <img src="/static/images/show.png" alt="Mostrar senha" id="senha-icon">
+                    </button>
+                </div>
+                <span class="mensagem-erro" id="senha-erro">Por favor, insira a senha.</span>
+                <span class="mensagem-erro" id="login-erro">Usuario ou senha inválida.</span>
+            </div>
+
+            <div class="check">
+                <input type="checkbox" id="Manter-conectado" name="Manter-conectado">
+                <label for="Manter-conectado">Manter conectado</label>
+            </div>
+
+            <button type="submit" class="btn" id="btn">Entrar</button>
+            <div class="botao-reg-esqueceu">
+                <a href="/cadastro" class="registro">Primeiro acesso</a>
+                <a href="javascript:void(0)" id="esqueciSenhaBtn" class="registro">Esqueci a senha</a>
+            </div>
+        </form>
+    </div>
+
+<!-- Modal de Recuperação de Senha -->
+<div id="modal_recuperacao" class="modal oculto">
+    <div class="modal-content">
+        <h2>Recuperar senha</h2>
+        <form>
+            <input type="text" id="emailRecuperacao" class="emailRecuperacao" placeholder="Digite seu email">
+        </form>
+        <span class="mensagem-erro" id="rec-erro">Por favor, insira um email.</span>
+        <button  type="button" id="btn-rec" class="btn-recuperar">Recuperar</button>
+    </div>
+</div>
+
+    <script src="/static/login.js"></script>
+</body>
+
+</html>
