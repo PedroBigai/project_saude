@@ -12,6 +12,7 @@ let metado;
 
 document.getElementById('btn1').style.display = 'none';
 
+
 dot1.classList.add('active');
 
 document.getElementById('usuario').addEventListener('keydown', function(e) {
@@ -225,6 +226,40 @@ document.getElementById('register').addEventListener('submit', function (event) 
                 break;
 
             case 4:
+
+            // Enviar os dados para a rota do Flask
+            fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    usuario: usuariodo,
+                    email: emaildo,
+                    senha: senhado,
+                    altura: alturado, 
+                    dataNas: datado,
+                    peso: pesado,
+                    sexo: sexodo,
+                    objetivo: metado,
+
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao registrar usuário');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data.message); // Mensagem de sucesso
+                // Redirecionar ou executar outra lógica após o registro
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+
+                
                 window.location.href = '/';
                 break;
 
