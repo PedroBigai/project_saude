@@ -22,7 +22,7 @@ def pag_user():
 
 
 
-# ROTAS API
+# ROTAS API LOCAL
 
 @app.route('/api/register', methods=['POST'])
 def register():
